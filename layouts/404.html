@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <main id="main">
+    <div>
+      <video autoplay loop muted>
+        <source src="404.mp4" type="video/mp4">
+        <img src="404.gif" title="404">
+      </video>
+      <p>Nichts to see here: <a href="{{ "" | relURL }}">Go Home</a></p>
+    </div>
+  </main>
+{{ end }}
