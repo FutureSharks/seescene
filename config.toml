@@ -29,3 +29,24 @@ weight = 3
 name = "Contribute"
 url = "/contribute/"
 weight = 3
+
+[deployment]
+[[deployment.targets]]
+name = "s3"
+cloudFrontDistributionID = "E3M1MXBCRL8CI3"
+URL = "s3://seescene?region=eu-central-1"
+
+[[deployment.matchers]]
+# Cache static assets for 1 year.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
